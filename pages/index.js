@@ -15,7 +15,7 @@ export default function Home() {
   useEffect(() => {
     if (!clubs)
       axios
-        .get("http://localhost:5000/api/v1/getAllClubs", {
+        .get("https://umichguide-server.0hq.repl.co/api/v1/getAllClubs", {
           params: {
             limit: 10,
           },
@@ -32,7 +32,7 @@ export default function Home() {
   useEffect(() => {
     if (search?.length > 0) {
       axios
-        .get("http://localhost:5000/api/v1/searchClubs", {
+        .get("https://umichguide-server.0hq.repl.co/api/v1/searchClubs", {
           params: {
             query: search,
           },
@@ -43,7 +43,7 @@ export default function Home() {
         });
     } else {
       axios
-        .get("http://localhost:5000/api/v1/getAllClubs", {
+        .get("https://umichguide-server.0hq.repl.co/api/v1/getAllClubs", {
           params: {
             limit: 10,
           },
