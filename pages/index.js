@@ -14,7 +14,7 @@ export default function Home() {
   // fetch clubs from backend from localhost:5000
   useEffect(() => {
     if (!clubs)
-      // TODO: figure out how to hit the backend endpoint
+      // TODO: figure out how to hit the backend endpoint. Should be something like: "/api/v1/getAllClubs"
       axios
         .get("http://localhost:5000/api/v1/getAllClubs", {
           params: {
