@@ -14,8 +14,9 @@ export default function Home() {
   // fetch clubs from backend from localhost:5000
   useEffect(() => {
     if (!clubs)
+      // TODO: figure out how to hit the backend endpoint
       axios
-        .get("https://umichguide-server.0hq.repl.co/api/v1/getAllClubs", {
+        .get("http://localhost:5000/api/v1/getAllClubs", {
           params: {
             limit: 10,
           },
@@ -28,35 +29,35 @@ export default function Home() {
           setClubs(res.data);
         });
   }, []);
-
-  useEffect(() => {
-    if (search?.length > 0) {
-      axios
-        .get("https://umichguide-server.0hq.repl.co/api/v1/searchClubs", {
-          params: {
-            query: search,
-          },
-        })
-        .then((res) => {
-          console.log(res);
-          setClubs(res.data.results);
-        });
-    } else {
-      axios
-        .get("https://umichguide-server.0hq.repl.co/api/v1/getAllClubs", {
-          params: {
-            limit: 10,
-          },
-        })
-        .catch((err) => {
-          console.log(err);
-        })
-        .then((res) => {
-          console.log(res);
-          setClubs(res.data);
-        });
-    }
-  }, [search]);
+  //
+  // useEffect(() => {
+  //   if (search?.length > 0) {
+  //     axios
+  //       .get("https://umichguide-server.0hq.repl.co/api/v1/searchClubs", {
+  //         params: {
+  //           query: search,
+  //         },
+  //       })
+  //       .then((res) => {
+  //         console.log(res);
+  //         setClubs(res.data.results);
+  //       });
+  //   } else {
+  //     axios
+  //       .get("https://umichguide-server.0hq.repl.co/api/v1/getAllClubs", {
+  //         params: {
+  //           limit: 10,
+  //         },
+  //       })
+  //       .catch((err) => {
+  //         console.log(err);
+  //       })
+  //       .then((res) => {
+  //         console.log(res);
+  //         setClubs(res.data);
+  //       });
+  //   }
+  // }, [search]);
 
   return (
     <>
