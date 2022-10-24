@@ -33,7 +33,7 @@ export default function Home() {
   useEffect(() => {
     if (search?.length > 0) {
       axios
-        .get("https://umichguide-server.0hq.repl.co/api/v1/searchClubs", {
+        .get("http://localhost:5000/api/v1/searchClubs", {
           params: {
             query: search,
           },
@@ -44,7 +44,7 @@ export default function Home() {
         });
     } else {
       axios
-        .get("https://umichguide-server.0hq.repl.co/api/v1/getAllClubs", {
+        .get("http://localhost:5000/api/v1/getAllClubs", {
           params: {
             limit: 10,
           },
@@ -62,26 +62,12 @@ export default function Home() {
   return (
     <>
       <main className="min-h-full">
-        <div className="flex items-center justify-between border-b-2 border-[#f5f5f5] bg-white px-6 py-3 ">
-          <div className="flex items-center gap-2">
-            <h1 className="text-[25px] font-bold text-[#FFCB03]">M</h1>
-            <h1 className="text-[22px] font-medium">UMich.guide</h1>
-          </div>
-          <div className="flex h-10 items-center justify-between gap-8 text-[#323232]">
-            <h3 className="text-md cursor-pointer">About us</h3>
-            <h3 className="text-md cursor-pointer">Write a club review</h3>
-            <h3 className="text-md cursor-pointer">I&apos;m a club organizer</h3>
-            <div className="flex h-8 cursor-pointer items-center rounded-md bg-[#F3F6FC] px-6 text-[#323232]">
-              <h3 className="text-md font-medium">Log in</h3>
-            </div>
-          </div>
-        </div>
         <div className="mt-10 mb-10 px-24">
           <div className="mx-auto max-w-[900px] min-h-[800px]">
             <div className="flex h-[55px] items-center rounded-[10px] border-[2px] border-[#DEDEDE] bg-white px-5">
               {/* <h2 className="text-xl text-[#556069]">Search for any club, organization, or team...</h2> */}
               <input
-                className="flex-grow border-none  text-xl text-[#00192B] placeholder-[#778087] !outline-none 
+                className="flex-grow border-none  text-xl text-[#00192B] placeholder-[#778087] !outline-none
               "
                 placeholder="Search for any club, organization, or team..."
                 onChange={(e) => setSearch(e.target.value)}
@@ -94,17 +80,6 @@ export default function Home() {
           </div>
         </div>
       </main>{" "}
-      <div className="sticky bottom-0 z-20 flex h-10 w-full items-center justify-between bg-[#F3F6FC] px-5 text-sm text-[#38526A]">
-        <p>
-          A student project. Not affiliated with the University of Michigan.{" "}
-          <a href="" className="underline">
-            Read more.
-          </a>
-        </p>
-        <a href="">
-          <p className="underline">Legal + Deletion Requests</p>
-        </a>
-      </div>
     </>
   );
 }
