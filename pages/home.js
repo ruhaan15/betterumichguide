@@ -5,7 +5,7 @@ function Home() {
     const [search, setSearch] = useState("");
     const [clubs, setClubs] = useState();
 
-    // fetch clubs from backend from localhost:5000
+    // fetch clubs[club_id] from backend from localhost:5000
     useEffect(() => {
         if (!clubs)
             // TODO: figure out how to hit the backend endpoint. Should be something like: "/api/v1/getAllClubs"

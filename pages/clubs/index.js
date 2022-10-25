@@ -3,15 +3,15 @@ import axios from "axios";
 import Head from "next/head";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import styles from "../styles/Home.module.css";
-import Solar from "../public/Solar.jpeg";
-import Verified from "../public/Verified.svg";
+import styles from "../../styles/Home.module.css";
+import Solar from "../../public/Solar.jpeg";
+import Verified from "../../public/Verified.svg";
 
 export default function Home() {
   const [search, setSearch] = useState("");
   const [clubs, setClubs] = useState();
 
-  // fetch clubs from backend from localhost:5000
+  // fetch clubs[club_id] from backend from localhost:5000
   useEffect(() => {
     if (!clubs)
       // TODO: figure out how to hit the backend endpoint. Should be something like: "/api/v1/getAllClubs"
@@ -145,9 +145,11 @@ const ClubPill = ({ club }) => {
           <h3 className="font-regular text-sm">Social</h3>
         </div>
       </div>
-      <div className="flex h-8 cursor-pointer items-center rounded-md bg-[#0066FF] px-6 text-[#fff]">
-        <h3 className="text-md font-medium">Join</h3>
-      </div>
+      <a href={'/clubs/' + club.id}>
+        <div className="flex h-8 cursor-pointer items-center rounded-md bg-[#0066FF] px-6 text-[#fff]">
+            <h3 className="text-md font-medium">Join</h3>
+        </div>
+      </a>
     </div>
   );
 };

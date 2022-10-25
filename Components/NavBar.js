@@ -4,7 +4,7 @@ const NavBar = () => {
             <div className="flex items-center justify-between border-b-2 border-[#f5f5f5] bg-white px-6 py-3 ">
                 <div className="flex items-center gap-2">
                     <h1 className="text-[25px] font-bold text-[#FFCB03]">M</h1>
-                    <a href="/"><h1 className="text-[22px] font-medium">UMich.guide</h1></a>
+                    <a href="/clubs"><h1 className="text-[22px] font-medium">UMich.guide</h1></a>
                 </div>
                 <div className="flex h-10 items-center justify-between gap-8 text-[#323232]">
                     <a href="/about"><h3 className="text-md cursor-pointer">About us</h3></a>

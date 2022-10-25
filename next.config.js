@@ -7,4 +7,19 @@ const nextConfig = {
   swcMinify: true,
 };
 
-module.exports = nextConfig;
+module.exports = {
+  images: {
+    domains: ["se-images.campuslabs.com"],
+  },
+  reactStrictMode: true,
+  swcMinify: true,
+  async redirects() {
+    return [
+      {
+        source: '/',
+        destination: '/clubs[club_id]',
+        permanent: true,
+      },
+    ]
+  },
+}
