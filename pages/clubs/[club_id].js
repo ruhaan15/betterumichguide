@@ -7,6 +7,7 @@ import styles from "../../styles/Home.module.css";
 import Solar from "../../public/Solar.jpeg";
 import Verified from "../../public/Verified.svg";
 import {useRouter} from "next/router";
+import parse from "html-react-parser"
 
 import {getAllClubsData, getSingleClubData} from "../../lib/clubs";
 
@@ -73,17 +74,21 @@ const ClubInfo = ({ club }) => {
 
     return (
             <>
-            <div className="flex">
-                <Image
-                    src={club.profilePicture ? `https://se-images.campuslabs.com/clink/images/${club.profilePicture}` : Solar}
-                    alt="Club Logo"
-                    width={100}
-                    height={100}
-                    className="rounded"
-                />
-                <h1 className="text-[22px] font-medium pl-7 py-2 ">{club.name}</h1>
-            </div>
-                <div className="mt-3">{club.description.replace(/<\/?[^>]+(>|$)/g, "")}</div>
+                <div className="flex">
+                    <Image
+                        src={club.profilePicture ? `https://se-images.campuslabs.com/clink/images/${club.profilePicture}` : Solar}
+                        alt="Club Logo"
+                        width={100}
+                        height={100}
+                        className="rounded"
+                    />
+                    <h1 className="text-[22px] font-medium pl-7 py-2 ">{club.name}</h1>
+                </div>
+
+                {
+                    parse(club.description)
+                }
+                {/*<div className="mt-3">{club.description.replace(/<\/?[^>]+(>|$)/g, "")}</div>*/}
 
             </>
     );
