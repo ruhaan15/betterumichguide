@@ -108,6 +108,7 @@ const ClubPill = ({ club }) => {
       }}
     >
       <div className="flex h-[50px] shrink-0 items-center">
+      <a href={'/clubs/' + club.id}>
         <div className="relative h-[50px]">
           {club.socialMedia_externalWebsite ? (
             <div className="absolute -top-2 -right-2 z-10">
@@ -122,8 +123,11 @@ const ClubPill = ({ club }) => {
             className="rounded"
           />
         </div>
+        </a>
         <div className="my-1 ml-4 flex flex-col justify-between">
+          <a href={'/clubs/' + club.id}>
           <h1 className="mt-0.5 text-lg font-medium leading-5.5 text-[#00192B]">{truncateStr(club.name, 32)}</h1>
+          </a>
           <div className="font-regular mt-[3px] flex gap-2 text-sm leading-5.5 text-[#979999]">
             <h2>100+ members</h2>
 
@@ -134,7 +138,7 @@ const ClubPill = ({ club }) => {
           </div>
         </div>
       </div>
-      <div className="flex items-center gap-2">
+      <div className="flex">
         {/*<div className={hover ? hover_pill : normal_pill}>*/}
         {/*  <h3 className="font-regular text-sm">Project Team</h3>*/}
         {/*</div>*/}
