@@ -25,7 +25,7 @@ export default function Club({ club }) {
     return (
         <>
             <main className="min-h-full">
-                <div className="mt-10 flex">
+                <div className="mt-10">
                     <a href={'/clubs'}>
                         <button type="button" class="text-white mt-[10px] bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 h-8">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mr-1">
