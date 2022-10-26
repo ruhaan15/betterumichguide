@@ -25,12 +25,23 @@ export default function Club({ club }) {
     return (
         <>
             <main className="min-h-full">
-                <div className="mt-10 mb-10 px-24">
-                    <div className="mx-auto max-w-[900px] min-h-[800px]">
-                        <div className="mx-0 mt-[10px] flex flex-col gap-y-1">
-                            <ClubInfo key={club.id} club={club.data[0]} />
-                             {/*<ClubPill key={club.id} club={club} />) : <h1>Loading...</h1>}*/}
-                            {/*{clubs ? clubs.map((club, i) => <h1>{club.name}</h1>) : <h1>Loading...</h1>}*/}
+                <div className="mt-10 flex">
+                    <a href={'/clubs'}>
+                        <button type="button" class="text-white mt-[10px] bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 h-8">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mr-1">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M19.5 12h-15m0 0l6.75 6.75M4.5 12l6.75-6.75" />
+                        </svg>
+
+                        <h2 className="text-base"> Back </h2>
+                        </button>
+                    </a>
+                    <div className="mb-10 px-24">
+                        <div className="mx-auto max-w-[900px] min-h-[800px]">
+                            <div className="mx-0 mt-[10px] flex flex-col gap-y-1">
+                                <ClubInfo key={club.id} club={club.data[0]} />
+                                {/*<ClubPill key={club.id} club={club} />) : <h1>Loading...</h1>}*/}
+                                {/*{clubs ? clubs.map((club, i) => <h1>{club.name}</h1>) : <h1>Loading...</h1>}*/}
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -107,7 +118,7 @@ const ClubInfo = ({ club }) => {
                                     </button>
                                 </a>
                             <a href={club.socialMedia_externalWebsite} target="_blank">
-                                <button className="align-middle mx-2 bg-blue-500 hover:bg-blue-700 text-white font-light py-2 px-4 rounded btn btn-blue">Website </button>
+                                <button className="align-middle mx-2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 h-8">Website </button>
                             </a>
                         </div>
                     </div>
