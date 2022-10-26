@@ -77,6 +77,7 @@ export default function Home() {
             <div className="mx-0 mt-[10px] flex flex-col gap-y-1">
               {clubs ? clubs.map((club, i) => <ClubPill key={club.id} club={club} />) : <h1>Loading...</h1>}
             </div>
+            <button className="align-middle mx-2 bg-blue-500 hover:bg-blue-700 text-white font-light py-2 px-4 rounded btn btn-blue">Learn More</button>
           </div>
         </div>
       </main>{" "}
