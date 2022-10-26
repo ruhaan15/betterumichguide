@@ -17,7 +17,7 @@ module.exports = {
     return [
       {
         source: '/',
-        destination: '/clubs[club_id]',
+        destination: '/clubs',
         permanent: true,
       },
     ]
