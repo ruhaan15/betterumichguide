@@ -69,7 +69,7 @@ function truncateStr(str, n) {
 // this will return info about a club
 const ClubInfo = ({ club }) => {
 
-    console.log(club)
+    //console.log(club)
 
 
     return (
@@ -107,10 +107,11 @@ const ClubInfo = ({ club }) => {
                                     </button>
                                 </a>
                             <a href={club.socialMedia_externalWebsite} target="_blank">
-                                <button className="align-middle mx-2 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded btn btn-blue">Website </button>
+                                <button className="align-middle mx-2 bg-blue-500 hover:bg-blue-700 text-white font-light py-2 px-4 rounded btn btn-blue">Website </button>
                             </a>
                         </div>
                     </div>
+                    
                 </div>
 
                 <div>

@@ -147,7 +147,7 @@ const ClubPill = ({ club }) => {
       </div>
       <a href={'/clubs/' + club.id}>
         <div className="flex h-8 cursor-pointer items-center rounded-md bg-[#0066FF] px-6 text-[#fff]">
-            <h3 className="text-md font-medium">Interest</h3>
+            <h3 className="text-md font-medium">Learn More</h3>
         </div>
       </a>
     </div>
