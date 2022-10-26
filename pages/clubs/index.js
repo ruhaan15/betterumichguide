@@ -16,7 +16,7 @@ export default function Home() {
     if (!clubs)
       // TODO: figure out how to hit the backend endpoint. Should be something like: "/api/v1/getAllClubs"
       axios
-        .get("http://localhost:5000/api/v1/getAllClubs", {
+        .get("http://localhost:5000/api/v1/clubs/getAllClubs", {
           params: {
             limit: 10,
           },
@@ -33,7 +33,7 @@ export default function Home() {
   useEffect(() => {
     if (search?.length > 0) {
       axios
-        .get("http://localhost:5000/api/v1/searchClubs", {
+        .get("http://localhost:5000/api/v1/clubs/searchClubs", {
           params: {
             query: search,
           },
@@ -44,7 +44,7 @@ export default function Home() {
         });
     } else {
       axios
-        .get("http://localhost:5000/api/v1/getAllClubs", {
+        .get("http://localhost:5000/api/v1/clubs/getAllClubs", {
           params: {
             limit: 10,
           },
@@ -147,7 +147,7 @@ const ClubPill = ({ club }) => {
       </div>
       <a href={'/clubs/' + club.id}>
         <div className="flex h-8 cursor-pointer items-center rounded-md bg-[#0066FF] px-6 text-[#fff]">
-            <h3 className="text-md font-medium">Join</h3>
+            <h3 className="text-md font-medium">Interest</h3>
         </div>
       </a>
     </div>
