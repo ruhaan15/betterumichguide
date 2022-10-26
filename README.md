@@ -7,7 +7,7 @@ run server with `npm run dev`
 
 Git worklow:
 1. Update local main: `git checkout main`
-2. Create a new branch: `git checkout -b <branch name>`
+2. Create a new branch (only IF YOU ARE DEVELOPING A NEW BRANCH): `git checkout -b <branch name>`**OR** run `git fetch` and `git checkout <branch name>` if you are developing on an existing branch
 3. Push the empty branch: `git push --set-upstream origin <branch name>`
 4. Develop stuff on the branch: (normal git workflow, git add then git push)
 5. When branch development is complete, merge the branch into our main: go into github.com and open a pull request on the branch. Set the base repository to ruhaan15/betterumichguide
