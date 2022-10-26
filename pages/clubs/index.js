@@ -135,14 +135,14 @@ const ClubPill = ({ club }) => {
         </div>
       </div>
       <div className="flex items-center gap-2">
+        {/*<div className={hover ? hover_pill : normal_pill}>*/}
+        {/*  <h3 className="font-regular text-sm">Project Team</h3>*/}
+        {/*</div>*/}
+        {/*<div className={hover ? hover_pill : normal_pill}>*/}
+        {/*  <h3 className="font-regular text-sm">Engineering</h3>*/}
+        {/*</div>*/}
         <div className={hover ? hover_pill : normal_pill}>
-          <h3 className="font-regular text-sm">Project Team</h3>
-        </div>
-        <div className={hover ? hover_pill : normal_pill}>
-          <h3 className="font-regular text-sm">Engineering</h3>
-        </div>
-        <div className={hover ? hover_pill : normal_pill}>
-          <h3 className="font-regular text-sm">Social</h3>
+          <h3 className="font-regular text-sm">{club.categoryNames[0]}</h3>
         </div>
       </div>
       <a href={'/clubs/' + club.id}>
