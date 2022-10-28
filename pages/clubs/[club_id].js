@@ -9,6 +9,7 @@ import Verified from "../../public/Verified.svg";
 import {useRouter} from "next/router";
 import parse from "html-react-parser"
 
+
 import {getAllClubsData, getSingleClubData} from "../../lib/clubs";
 
 export default function Club({ club }) {
@@ -18,7 +19,7 @@ export default function Club({ club }) {
 
     // return (
     //     <>
-    //         <div>{club.data[0].name}</div>
+    //         <div>{club.data[0}</].namediv>
     //     </>
     // )
 
@@ -77,11 +78,17 @@ function truncateStr(str, n) {
     return str?.length > n ? str.substr(0, n - 1) + "..." : str;
 }
 
+function getAccessToken(){
+    axios.get("http://localhost:5000/insta/v1/facebook/getAccessToken").then((accessToken) => {
+        console.log(accessToken);
+    })
+}
+
 // this will return info about a club
 const ClubInfo = ({ club }) => {
-
+    
     //console.log(club)
-
+    
 
     return (
             <>
@@ -128,6 +135,10 @@ const ClubInfo = ({ club }) => {
                 <div>
                     {parse(club.description)}
                 </div>
+                <div>
+                    {getAccessToken()}
+                </div>
+                
                 {/*<div className="mt-3">{club.description.replace(/<\/?[^>]+(>|$)/g, "")}</div>*/}
 
             </>

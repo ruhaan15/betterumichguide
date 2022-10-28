@@ -62,8 +62,7 @@ function Home() {
                         <div className="flex h-[55px] items-center rounded-[10px] border-[2px] border-[#DEDEDE] bg-white px-5">
                             {/* <h2 className="text-xl text-[#556069]">Search for any club, organization, or team...</h2> */}
                             <input
-                                className="flex-grow border-none  text-xl text-[#00192B] placeholder-[#778087] !outline-none
-              "
+                                className="flex-grow border-none  text-xl text-[#00192B] placeholder-[#778087] !outline-none"
                                 placeholder="Search for any club, organization, or team..."
                                 onChange={(e) => setSearch(e.target.value)}
                             />
