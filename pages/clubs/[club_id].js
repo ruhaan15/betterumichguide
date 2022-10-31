@@ -78,11 +78,6 @@ function truncateStr(str, n) {
     return str?.length > n ? str.substr(0, n - 1) + "..." : str;
 }
 
-function getAccessToken(){
-    axios.get("http://localhost:5000/insta/v1/facebook/getAccessToken").then((accessToken) => {
-        console.log(accessToken);
-    })
-}
 
 // this will return info about a club
 const ClubInfo = ({ club }) => {
