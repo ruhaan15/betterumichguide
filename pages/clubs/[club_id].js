@@ -131,7 +131,6 @@ const ClubInfo = ({ club }) => {
                     {parse(club.description)}
                 </div>
                 <div>
-                    {getAccessToken()}
                 </div>
                 
                 {/*<div className="mt-3">{club.description.replace(/<\/?[^>]+(>|$)/g, "")}</div>*/}
