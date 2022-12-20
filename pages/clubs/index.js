@@ -3,7 +3,6 @@ import axios from "axios";
 import Head from "next/head";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import styles from "../../styles/Home.module.css";
 import Solar from "../../public/Solar.jpeg";
 import Verified from "../../public/Verified.svg";
 
@@ -13,8 +12,7 @@ export default function Home() {
     const [page, setPage] = useState(0);
 
     useEffect(() => {
-        console.log("effect");
-        if (search?.length > 0) {
+        if (search !== "") {
             axios
                 .get("http://localhost:5000/api/v1/clubs/searchClubs", {
                     params: {
@@ -26,6 +24,7 @@ export default function Home() {
                 })
                 .then((res) => {
                     setClubs(res.data.results);
+                    setPage(0);
                 });
         } else {
             axios
@@ -38,7 +37,12 @@ export default function Home() {
                     console.log(err);
                 })
                 .then((res) => {
-                    setClubs((prev) => prev.concat(res.data));
+                    setClubs((prev) => {
+                        if (page === 0) {
+                            return res.data;
+                        }
+                        return [...prev, ...res.data];
+                    });
                 });
         }
     }, [search, page]);
@@ -53,29 +57,33 @@ export default function Home() {
                             <input
                                 className="flex-grow border-none  text-xl text-[#00192B] placeholder-[#778087] !outline-none"
                                 placeholder="Search for any club, organization, or team..."
-                                onChange={(e) => setSearch(e.target.value)}
+                                onChange={(e) => {
+                                    setSearch(e.target.value);
+                                }}
                             />
                         </div>
                         {/* <hr className="mx-3 mt-4  border border-solid border-[#DEDEDE]" /> */}
                         <div className="mx-0 mt-[10px] flex flex-col gap-y-1">
-                            {clubs ? (
-                                clubs.map((club, i) => (
+                            {clubs !== [] ? (
+                                clubs.map((club) => (
                                     <ClubPill key={club.id} club={club} />
                                 ))
                             ) : (
                                 <h1>Loading...</h1>
                             )}
                         </div>
-                        <div className="flex justify-center my-8">
-                            <button
-                                onClick={() => setPage((prev) => prev + 1)}
-                                className="flex h-8 cursor-pointer items-center rounded-md bg-[#0066FF] px-6 text-[#fff]"
-                            >
-                                <h3 className="text-md font-medium">
-                                    Load More
-                                </h3>
-                            </button>
-                        </div>
+                        {search === "" ? (
+                            <div className="flex justify-center mt-8 mb-16">
+                                <button
+                                    onClick={() => setPage((prev) => prev + 1)}
+                                    className="flex h-8 cursor-pointer items-center rounded-md bg-[#0066FF] px-6 text-[#fff]"
+                                >
+                                    <h3 className="text-md font-medium">
+                                        Load More
+                                    </h3>
+                                </button>
+                            </div>
+                        ) : null}
                     </div>
                 </div>
             </main>{" "}
