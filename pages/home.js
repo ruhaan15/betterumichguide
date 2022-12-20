@@ -1,5 +1,5 @@
 import axios from "axios";
-import {useEffect, useState} from "react";
+import { useEffect, useState } from "react";
 
 function Home() {
     const [search, setSearch] = useState("");
@@ -56,7 +56,6 @@ function Home() {
     return (
         <>
             <main className="min-h-full">
-
                 <div className="mt-10 mb-10 px-24">
                     <div className="mx-auto max-w-[900px] min-h-[800px]">
                         <div className="flex h-[55px] items-center rounded-[10px] border-[2px] border-[#DEDEDE] bg-white px-5">
@@ -69,14 +68,21 @@ function Home() {
                         </div>
                         {/* <hr className="mx-3 mt-4  border border-solid border-[#DEDEDE]" /> */}
                         <div className="mx-0 mt-[10px] flex flex-col gap-y-1">
-                            {clubs ? clubs.map((club, i) => <ClubPill key={club.id} club={club} />) : <h1>Loading...</h1>}
+                            {clubs ? (
+                                clubs.map((club, i) => (
+                                    <ClubPill key={club.id} club={club} />
+                                ))
+                            ) : (
+                                <h1>Loading...</h1>
+                            )}
                         </div>
                     </div>
                 </div>
             </main>{" "}
             <div className="sticky bottom-0 z-20 flex h-10 w-full items-center justify-between bg-[#F3F6FC] px-5 text-sm text-[#38526A]">
                 <p>
-                    A student project. Not affiliated with the University of Michigan.{" "}
+                    A student project. Not affiliated with the University of
+                    Michigan.{" "}
                     <a href="" className="underline">
                         Read more.
                     </a>
