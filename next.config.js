@@ -1,15 +1,4 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {
-    images: {
-        domains: [
-            "se-images.campuslabs.com",
-            "www.clker.com",
-            "upload.wikimedia.org",
-        ],
-    },
-    reactStrictMode: false,
-    swcMinify: true,
-};
 
 module.exports = {
     images: {

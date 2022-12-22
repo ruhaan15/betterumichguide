@@ -1,12 +1,5 @@
-import classNames from "classnames";
-import axios from "axios";
-import Head from "next/head";
 import Image from "next/image";
-import { useEffect, useState } from "react";
-import styles from "../../styles/Home.module.css";
 import Solar from "../../public/Solar.jpeg";
-import Verified from "../../public/Verified.svg";
-import { useRouter } from "next/router";
 import parse from "html-react-parser";
 
 import { getAllClubsData, getSingleClubData } from "../../lib/clubs";
@@ -86,10 +79,6 @@ export const getStaticProps = async ({ params }) => {
         },
     };
 };
-
-function truncateStr(str, n) {
-    return str?.length > n ? str.substr(0, n - 1) + "..." : str;
-}
 
 // this will return info about a club
 const ClubInfo = ({ club }) => {

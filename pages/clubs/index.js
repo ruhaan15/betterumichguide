@@ -15,12 +15,12 @@ export default function Home() {
                         query: search,
                     },
                 })
-                .catch((err) => {
-                    console.log(err);
-                })
                 .then((res) => {
                     setClubs(res.data.results);
                     setPage(0);
+                })
+                .catch((err) => {
+                    console.log(err);
                 });
         } else {
             axios
@@ -30,9 +30,6 @@ export default function Home() {
                         size: 10,
                     },
                 })
-                .catch((err) => {
-                    console.log(err);
-                })
                 .then((res) => {
                     setClubs((prev) => {
                         if (page === 0) {
@@ -40,6 +37,9 @@ export default function Home() {
                         }
                         return [...prev, ...res.data];
                     });
+                })
+                .catch((err) => {
+                    console.log(err);
                 });
         }
     }, [search, page]);
