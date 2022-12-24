@@ -8,10 +8,10 @@ import { truncateStr } from "../lib/helpers";
 const ClubPill = ({ club }) => {
     let [hover, setHover] = useState(false);
     const normal_wrapper = classNames(
-        "static flex h-10 items-center justify-between rounded-2xl py-10 pl-4 pr-5"
+        "flex items-center justify-between rounded-2xl p-5"
     );
     const hover_wrapper = classNames(
-        "static flex h-10 items-center justify-between rounded-2xl py-10 pl-4 pr-5 bg-[#F3F6FC] "
+        "flex items-center justify-between rounded-2xl p-5 bg-[#F3F6FC] "
     );
     //   const hover_pill = classNames("flex h-7 cursor-pointer items-center rounded-md bg-[#fff] px-3 text-[#263B4A]");
     const normal_pill = classNames(
@@ -29,7 +29,7 @@ const ClubPill = ({ club }) => {
                 setHover(false);
             }}
         >
-            <div className="flex h-[50px] shrink-0 items-center">
+            <div className="flex items-center">
                 <a href={"/clubs/" + club.id}>
                     <div className="relative h-[50px]">
                         {club.socialMedia_externalWebsite ? (
@@ -71,20 +71,14 @@ const ClubPill = ({ club }) => {
                     </div>
                 </div>
             </div>
-            <div className="flex">
-                {/*<div className={hover ? hover_pill : normal_pill}>*/}
-                {/*  <h3 className="font-regular text-sm">Project Team</h3>*/}
-                {/*</div>*/}
-                {/*<div className={hover ? hover_pill : normal_pill}>*/}
-                {/*  <h3 className="font-regular text-sm">Engineering</h3>*/}
-                {/*</div>*/}
+            <div className="hidden md:flex">
                 <div className={hover ? hover_pill : normal_pill}>
                     <h3 className="font-regular text-sm">
                         {club.categoryNames[0]}
                     </h3>
                 </div>
             </div>
-            <a href={"/clubs/" + club.id}>
+            <a href={"/clubs/" + club.id} className="hidden lg:flex">
                 <div className="flex h-8 cursor-pointer items-center rounded-md bg-[#0066FF] px-6 text-[#fff]">
                     <h3 className="text-md font-medium">Learn More</h3>
                 </div>
