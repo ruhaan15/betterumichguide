@@ -16,42 +16,40 @@ export default function Club({ club }) {
     // )
 
     return (
-        <main className="min-h-full">
-            <div className="mt-10">
-                <a href={"/clubs"}>
-                    <button
-                        type="button"
-                        className="text-white mt-[10px] bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 h-8"
+        <>
+            <a href={"/clubs"}>
+                <button
+                    type="button"
+                    className="text-white mt-[10px] bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800 h-8"
+                >
+                    <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        fill="none"
+                        viewBox="0 0 24 24"
+                        strokeWidth="1.5"
+                        stroke="currentColor"
+                        className="w-6 h-6 mr-1"
                     >
-                        <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 24 24"
-                            strokeWidth="1.5"
-                            stroke="currentColor"
-                            className="w-6 h-6 mr-1"
-                        >
-                            <path
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                                d="M19.5 12h-15m0 0l6.75 6.75M4.5 12l6.75-6.75"
-                            />
-                        </svg>
+                        <path
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            d="M19.5 12h-15m0 0l6.75 6.75M4.5 12l6.75-6.75"
+                        />
+                    </svg>
 
-                        <h2 className="text-base"> Back </h2>
-                    </button>
-                </a>
-                <div className="mb-10 px-24">
-                    <div className="mx-auto max-w-[900px] min-h-[800px]">
-                        <div className="mx-0 mt-[10px] flex flex-col gap-y-1">
-                            <ClubInfo key={club.id} club={club.data[0]} />
-                            {/*<ClubPill key={club.id} club={club} />) : <h1>Loading...</h1>}*/}
-                            {/*{clubs ? clubs.map((club, i) => <h1>{club.name}</h1>) : <h1>Loading...</h1>}*/}
-                        </div>
+                    <h2 className="text-base"> Back </h2>
+                </button>
+            </a>
+            <div className="mb-10 px-24">
+                <div className="mx-auto max-w-[900px] min-h-[800px]">
+                    <div className="mx-0 mt-[10px] flex flex-col gap-y-1">
+                        <ClubInfo key={club.id} club={club.data[0]} />
+                        {/*<ClubPill key={club.id} club={club} />) : <h1>Loading...</h1>}*/}
+                        {/*{clubs ? clubs.map((club, i) => <h1>{club.name}</h1>) : <h1>Loading...</h1>}*/}
                     </div>
                 </div>
             </div>
-        </main>
+        </>
     );
 }
 

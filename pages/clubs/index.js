@@ -2,6 +2,8 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import ClubPill from "../../components/ClubPill";
 
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
 export default function Home() {
     const [search, setSearch] = useState("");
     const [clubs, setClubs] = useState([]);
@@ -10,7 +12,7 @@ export default function Home() {
     useEffect(() => {
         if (search !== "") {
             axios
-                .get("http://localhost:5000/api/v1/clubs/searchClubs", {
+                .get(`${API_URL}/api/v1/clubs/searchClubs`, {
                     params: {
                         query: search,
                     },
@@ -24,7 +26,7 @@ export default function Home() {
                 });
         } else {
             axios
-                .get("http://localhost:5000/api/v1/clubs/getAllClubs", {
+                .get(`${API_URL}/api/v1/clubs/getAllClubs`, {
                     params: {
                         page: page,
                         size: 10,
@@ -45,18 +47,17 @@ export default function Home() {
     }, [search, page]);
 
     return (
-        <div className="mx-auto mb-auto">
+        <div className="">
             <div className="flex h-[55px] items-center rounded-[10px] border-[2px] border-[#DEDEDE] bg-white px-5">
                 <input
-                    className="flex-grow border-none  text-xl text-[#00192B] placeholder-[#778087] !outline-none"
+                    className="flex-grow border-none text-xl text-[#00192B] placeholder-[#778087] !outline-none"
                     placeholder="Search for any club, organization, or team..."
                     onChange={(e) => {
                         setSearch(e.target.value);
                     }}
                 />
             </div>
-            {/* <hr className="mx-3 mt-4  border border-solid border-[#DEDEDE]" /> */}
-            <div className="mx-0 mt-[10px] flex flex-col gap-y-1">
+            <div className=" mt-[10px] flex flex-col gap-1">
                 {clubs !== [] ? (
                     clubs.map((club) => <ClubPill key={club.id} club={club} />)
                 ) : (
@@ -67,7 +68,7 @@ export default function Home() {
                 <div className="flex justify-center mt-8">
                     <button
                         onClick={() => setPage((prev) => prev + 1)}
-                        className="flex h-8 cursor-pointer items-center rounded-md bg-[#0066FF] px-6 text-[#fff]"
+                        className="flex cursor-pointer items-center rounded-md bg-[#0066FF] px-6 py-1 text-[#fff]"
                     >
                         <h3 className="text-md font-medium">Load More</h3>
                     </button>
