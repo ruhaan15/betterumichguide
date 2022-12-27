@@ -129,8 +129,18 @@ const ClubInfo = ({ club }) => {
                 </div>
             </div>
             <div>{parse(club.description || "")}</div>
+            <div className="flex justify-center mt-4">
+                <iframe
+                    src={`${
+                        club.socialMedia_instagramUrl.slice(-1) === "/"
+                            ? club.socialMedia_instagramUrl
+                            : club.socialMedia_instagramUrl + "/"
+                    }embed`}
+                    width="640"
+                    height="640"
+                    allowtransparency="true"
+                ></iframe>
+            </div>
         </>
     );
 };
-
-// club.shortName ? club.shortName : club.name

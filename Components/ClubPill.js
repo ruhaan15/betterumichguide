@@ -17,7 +17,7 @@ const ClubPill = ({ club }) => {
                             <div className="absolute -top-2 -right-2 z-10">
                                 <Image
                                     src={Verified}
-                                    alt="Club logo"
+                                    alt="Verified check`"
                                     width={25}
                                     height={25}
                                 />
@@ -36,7 +36,7 @@ const ClubPill = ({ club }) => {
                         />
                     </div>
                 </Link>
-                <div className="ml-4 flex flex-col justify-between break-words shrink">
+                <div className="ml-4 flex flex-col justify-between shrink break-words">
                     <Link href={"/clubs/" + club.id}>
                         <h2 className="mt-0.5 text-lg font-medium leading-5.5 text-[#00192B]">
                             {truncateStr(club.name, 36)}
@@ -49,7 +49,7 @@ const ClubPill = ({ club }) => {
                         <h2>·</h2>
                         <h2>No Dues</h2>
                     </div>
-                    <div className="flex sm:hidden">
+                    <div className="flex sm:hidden shrink break-words">
                         <div className={normal_pill}>
                             {club.categoryNames[0]}
                         </div>
@@ -57,11 +57,7 @@ const ClubPill = ({ club }) => {
                 </div>
             </div>
             <div className="hidden sm:flex">
-                <div className={normal_pill}>
-                    <h3 className="font-regular text-sm">
-                        {club.categoryNames[0]}
-                    </h3>
-                </div>
+                <div className={normal_pill}>{club.categoryNames[0]}</div>
             </div>
             <Link href={"/clubs/" + club.id}>
                 <div className="hidden lg:flex h-8 cursor-pointer items-center rounded-md bg-[#0066FF] px-6 text-[#fff]">

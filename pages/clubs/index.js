@@ -53,8 +53,10 @@ export default function Home() {
                     className="flex-grow border-none text-xl text-[#00192B] placeholder-[#778087] !outline-none"
                     placeholder="Search for any club, organization, or team..."
                     onChange={(e) => {
+                        e.preventDefault();
                         setSearch(e.target.value);
                     }}
+                    value={search}
                 />
             </div>
             <div className=" mt-[10px] flex flex-col gap-1">
