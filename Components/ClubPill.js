@@ -7,9 +7,8 @@ import Link from "next/link";
 const ClubPill = ({ club }) => {
     const normal_pill =
         "flex cursor-pointer items-center rounded-md bg-[#F3F6FC] px-3 py-1 text-[#263B4A]";
-
     return (
-        <div className="flex items-center justify-between rounded-2xl py-5 px-2 hover:bg-[#F3F6FC]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 items-center rounded-2xl py-5 px-2 hover:bg-[#F3F6FC]">
             <div className="flex items-center">
                 <Link href={"/clubs/" + club.id}>
                     <div className="relative shrink-0">
@@ -36,7 +35,7 @@ const ClubPill = ({ club }) => {
                         />
                     </div>
                 </Link>
-                <div className="ml-4 flex flex-col justify-between shrink break-words">
+                <div className="ml-4 flex flex-col justify-between">
                     <Link href={"/clubs/" + club.id}>
                         <h2 className="mt-0.5 text-lg font-medium leading-5.5 text-[#00192B]">
                             {truncateStr(club.name, 36)}
@@ -49,18 +48,22 @@ const ClubPill = ({ club }) => {
                         <h2>·</h2>
                         <h2>No Dues</h2>
                     </div>
-                    <div className="flex sm:hidden shrink break-words">
-                        <div className={normal_pill}>
-                            {club.categoryNames[0]}
+                    {club.categoryNames.length > 0 ? (
+                        <div className="flex sm:hidden text-xs">
+                            <div className={normal_pill}>
+                                {club.categoryNames[0]}
+                            </div>
                         </div>
-                    </div>
+                    ) : null}
                 </div>
             </div>
-            <div className="hidden sm:flex">
-                <div className={normal_pill}>{club.categoryNames[0]}</div>
+            <div className="hidden sm:flex text-sm justify-self-end">
+                {club.categoryNames.length > 0 ? (
+                    <div className={normal_pill}>{club.categoryNames[0]}</div>
+                ) : null}
             </div>
             <Link href={"/clubs/" + club.id}>
-                <div className="hidden lg:flex h-8 cursor-pointer items-center rounded-md bg-[#0066FF] px-6 text-[#fff]">
+                <div className="hidden lg:flex h-8 justify-self-end cursor-pointer items-center rounded-md bg-[#0066FF] px-6 text-[#fff]">
                     <h3 className="text-md font-medium">Learn More</h3>
                 </div>
             </Link>

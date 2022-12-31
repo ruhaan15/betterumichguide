@@ -6,6 +6,7 @@ import Instagram from "../../public/insta.png";
 import Web from "../../public/web.png";
 import { getAllClubsData, getSingleClubData } from "../../lib/clubs";
 import Link from "next/link";
+import SocialButton from "../../components/SocialButton";
 
 export default function Club({ club }) {
     return (
@@ -82,74 +83,38 @@ const ClubInfo = ({ club }) => {
                     <h1 className="text-[22px] font-medium">{club.name}</h1>
                 </div>
                 <div className="mt-6">
-                    <a
-                        href={`mailto:${club.email}`}
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                       <button
-                            type="button"
-                            disabled={true}
-                            className={club.email ? "align-middle mx-2 bg-white-500 hover:bg-gray-200 text-white font-bold py-2 px-4 rounded btn btn-white" : "align-middle mx-2 bg-white-200 hover:bg-gray-200 text-white font-bold py-2 px-4 rounded btn btn-white grayscale cursor-not-allowed"}>
-                            <Image
-                                src={Gmail}
-                                alt="Email"
-                                width={30}
-                                height={30}
-                            />
-                        </button>
-                    </a>
-                    <a
-                        href={club.socialMedia_instagramUrl}
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        <button 
-                        type="button"
-                        disabled={true}
-                        className={club.socialMedia_instagramUrl ? "align-middle mx-2 bg-white-500 hover:bg-gray-200 text-white font-bold py-2 px-4 rounded btn btn-white" : "align-middle mx-2 bg-white-200 hover:bg-gray-200 text-white font-bold py-2 px-4 rounded btn btn-white grayscale cursor-not-allowed"}>
-                            <Image
-                                src={Instagram}
-                                alt="Instagram"
-                                width={30}
-                                height={30}
-                                className="rounded"
-                            />
-                        </button>
-                    </a>
-                    <a
-                        href={club.socialMedia_externalWebsite}
-                        target="_blank"
-                        rel="noreferrer"
-                    >
-                        <button 
-                        type="button"
-                        disabled={true}
-                        className={club.socialMedia_externalWebsite ? "align-middle mx-2 bg-white-500 hover:bg-gray-200 text-white font-bold py-2 px-4 rounded btn btn-white" : "align-middle mx-2 bg-white-200 hover:bg-gray-200 text-white font-bold py-2 px-4 rounded btn btn-white grayscale cursor-not-allowed"}>
-                            <Image
-                                src={Web}
-                                alt="Website"
-                                width={30}
-                                height={30}
-                                className="rounded"
-                            />
-                        </button>
-                    </a>
+                    <SocialButton
+                        link={club.email ? `mailto:${club.email}` : ""}
+                        img={Gmail}
+                        type="Email"
+                    />
+                    <SocialButton
+                        link={club.socialMedia_instagramUrl}
+                        img={Instagram}
+                        type="Instagram"
+                    />
+                    <SocialButton
+                        link={club.socialMedia_externalWebsite}
+                        img={Web}
+                        type="Website"
+                    />
                 </div>
             </div>
             <div>{parse(club.description || "")}</div>
-            <div className="flex justify-center mt-4">
-                { club.socialMedia_instagramUrl ? ( <iframe
-                    src={`${
-                        club.socialMedia_instagramUrl.slice(-1) === "/"
-                            ? club.socialMedia_instagramUrl
-                            : club.socialMedia_instagramUrl + "/"
-                    }embed`}
-                    width="640"
-                    height="640"
-                    allowtransparency="true"
-                ></iframe> ) : null }
-            </div>
+            {club.socialMedia_instagramUrl ? (
+                <div className="flex justify-center mt-4">
+                    <iframe
+                        src={`${
+                            club.socialMedia_instagramUrl.slice(-1) === "/"
+                                ? club.socialMedia_instagramUrl
+                                : club.socialMedia_instagramUrl + "/"
+                        }embed`}
+                        width="640"
+                        height="640"
+                        allowtransparency="true"
+                    ></iframe>
+                </div>
+            ) : null}
         </>
     );
 };
