@@ -87,7 +87,10 @@ const ClubInfo = ({ club }) => {
                         target="_blank"
                         rel="noreferrer"
                     >
-                        <button className="align-middle mx-2 bg-white-500 hover:bg-gray-200 text-white font-bold py-2 px-4 rounded btn btn-white">
+                       <button
+                            type="button"
+                            disabled={true}
+                            className={club.email ? "align-middle mx-2 bg-white-500 hover:bg-gray-200 text-white font-bold py-2 px-4 rounded btn btn-white" : "align-middle mx-2 bg-white-200 hover:bg-gray-200 text-white font-bold py-2 px-4 rounded btn btn-white grayscale cursor-not-allowed"}>
                             <Image
                                 src={Gmail}
                                 alt="Email"
@@ -101,7 +104,10 @@ const ClubInfo = ({ club }) => {
                         target="_blank"
                         rel="noreferrer"
                     >
-                        <button className="align-middle mx-2 bg-white-500 hover:bg-gray-200 text-white font-bold py-2 px-4 rounded btn btn-white">
+                        <button 
+                        type="button"
+                        disabled={true}
+                        className={club.socialMedia_instagramUrl ? "align-middle mx-2 bg-white-500 hover:bg-gray-200 text-white font-bold py-2 px-4 rounded btn btn-white" : "align-middle mx-2 bg-white-200 hover:bg-gray-200 text-white font-bold py-2 px-4 rounded btn btn-white grayscale cursor-not-allowed"}>
                             <Image
                                 src={Instagram}
                                 alt="Instagram"
@@ -116,7 +122,10 @@ const ClubInfo = ({ club }) => {
                         target="_blank"
                         rel="noreferrer"
                     >
-                        <button className="align-middle mx-2 bg-white-500 hover:bg-gray-200 text-white font-bold py-2 px-4 rounded btn btn-white">
+                        <button 
+                        type="button"
+                        disabled={true}
+                        className={club.socialMedia_externalWebsite ? "align-middle mx-2 bg-white-500 hover:bg-gray-200 text-white font-bold py-2 px-4 rounded btn btn-white" : "align-middle mx-2 bg-white-200 hover:bg-gray-200 text-white font-bold py-2 px-4 rounded btn btn-white grayscale cursor-not-allowed"}>
                             <Image
                                 src={Web}
                                 alt="Website"
@@ -130,7 +139,7 @@ const ClubInfo = ({ club }) => {
             </div>
             <div>{parse(club.description || "")}</div>
             <div className="flex justify-center mt-4">
-                <iframe
+                { club.socialMedia_instagramUrl ? ( <iframe
                     src={`${
                         club.socialMedia_instagramUrl.slice(-1) === "/"
                             ? club.socialMedia_instagramUrl
@@ -139,7 +148,7 @@ const ClubInfo = ({ club }) => {
                     width="640"
                     height="640"
                     allowtransparency="true"
-                ></iframe>
+                ></iframe> ) : null }
             </div>
         </>
     );
