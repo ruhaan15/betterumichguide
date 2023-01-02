@@ -1,8 +1,6 @@
-import React from "react";
-
 function termsOfUse() {
     return (
-        <React.Fragment>
+        <>
             <h2>
                 <strong>Terms and Conditions</strong>
             </h2>
@@ -297,7 +295,7 @@ function termsOfUse() {
                 website are provided free of charge, we will not be liable for
                 any loss or damage of any nature.
             </p>
-        </React.Fragment>
+        </>
     );
 }
 

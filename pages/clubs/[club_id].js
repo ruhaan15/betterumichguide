@@ -63,6 +63,7 @@ export const getStaticProps = async ({ params }) => {
 
 // this will return info about a club
 const ClubInfo = ({ club }) => {
+    const instaUrl = embedInsta(club.socialMedia_instagramUrl);
     return (
         <>
             <div className="flex flex-col md:flex-row mb-6 items-center justify-between">
@@ -100,15 +101,11 @@ const ClubInfo = ({ club }) => {
                     />
                 </div>
             </div>
-            <div>{parse(club.description || "")}</div>
-            {club.socialMedia_instagramUrl ? (
+            <div className="font-sans">{parse(club.description || "")}</div>
+            {instaUrl ? (
                 <div className="flex justify-center mt-4">
                     <iframe
-                        src={`${
-                            club.socialMedia_instagramUrl.slice(-1) === "/"
-                                ? club.socialMedia_instagramUrl
-                                : club.socialMedia_instagramUrl + "/"
-                        }embed`}
+                        src={instaUrl}
                         width="640"
                         height="640"
                         allowtransparency="true"
@@ -117,4 +114,16 @@ const ClubInfo = ({ club }) => {
             ) : null}
         </>
     );
+};
+
+const embedInsta = (url) => {
+    if (url) {
+        if (url.includes("?")) {
+            url = url.slice(0, url.indexOf("?"));
+        }
+        if (url.slice(-1) === "/") {
+            url = url.slice(0, -1);
+        }
+        return url + "/embed";
+    }
 };
