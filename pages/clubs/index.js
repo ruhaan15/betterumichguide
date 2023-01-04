@@ -6,13 +6,22 @@ export default function Home() {
     const [search, setSearch] = useState("");
     const [clubs, setClubs] = useState([]);
     const [page, setPage] = useState(0);
+    const [selectedFilters, setSelectedFilters] = useState([]);
+
+    const filters = ["Academic/Honor Societies", "Activism", "Business/Entrepreneurship", "Creative/Performing Arts",
+                        "Cultural/Ethnic", "Department", "Environmental", "Gender/Sexuality", "Governance",
+                        "Graduate/Professional", "Health & Wellness", "Media & Creative Writing", "Religious/Spiritual",
+                        "Science/Technology/Engineering", "Service/Service Learning", "Social Fraternity/Sorority"];
 
     useEffect(() => {
+        // console.log("the filters are " + selectedFilters)
+        console.log(search, selectedFilters)
         if (search !== "") {
             axios
                 .get("http://localhost:5000/api/v1/clubs/searchClubs", {
                     params: {
                         query: search,
+                        filters: selectedFilters
                     },
                 })
                 .then((res) => {
@@ -28,6 +37,7 @@ export default function Home() {
                     params: {
                         page: page,
                         size: 10,
+                        filters: selectedFilters
                     },
                 })
                 .then((res) => {
@@ -42,7 +52,7 @@ export default function Home() {
                     console.log(err);
                 });
         }
-    }, [search, page]);
+    }, [search, page, selectedFilters]);
 
     return (
         <>
@@ -58,6 +68,26 @@ export default function Home() {
                                     setSearch(e.target.value);
                                 }}
                             />
+                        </div>
+                        <div>
+                               <div>
+                                  {filters.map(filter => (
+                                      <button className="items-center mt-3 justify-between" onClick={() => {
+                                          if (selectedFilters.includes(filter)) {
+                                              setSelectedFilters(selectedFilters.filter(f => f !== filter));
+                                          } else {
+                                              setSelectedFilters([...selectedFilters, filter]);
+                                          }
+                                      }}>
+                                          <div className="">
+                                              {/*TODO: this can prob be refactored into something cleaner*/}
+                                              <p className={selectedFilters.includes(filter) ? 'flex h-7 cursor-pointer items-center rounded-md bg-[#0066FF] px-3 text-[#263B4A] mx-3' : 'flex h-7 cursor-pointer items-center rounded-md bg-[#F3F6FC] px-3 text-[#263B4A] mx-3'}>
+                                                  {filter}
+                                              </p>
+                                          </div>
+                                      </button>
+                                  ))}
+                                </div>
                         </div>
                         {/* <hr className="mx-3 mt-4  border border-solid border-[#DEDEDE]" /> */}
                         <div className="mx-0 mt-[10px] flex flex-col gap-y-1">
