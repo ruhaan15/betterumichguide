@@ -1,0 +1,206 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="2cf52431-e323-4fc9-80ec-9933489a2f7d" name="Changes" comment="fix bad merge">
+      <change beforePath="$PROJECT_DIR$/pages/clubs/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/pages/clubs/index.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/package.json" />
+  </component>
+  <component name="ProjectId" id="2GUs26LoYgVINY0TJmUOrQTSP6O" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/ruhaandoshi/Desktop/umich_projects/betterumichguide",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "nodejs_package_manager_path": "yarn",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/pages/clubs" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="js.build_tools.grunt" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="dev" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <package-manager value="npm" />
+      <envs />
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="2cf52431-e323-4fc9-80ec-9933489a2f7d" name="Changes" comment="" />
+      <created>1666454286369</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1666454286369</updated>
+      <workItem from="1666454287475" duration="32103000" />
+      <workItem from="1666707037370" duration="21677000" />
+      <workItem from="1666758526484" duration="4919000" />
+      <workItem from="1666792096060" duration="13521000" />
+      <workItem from="1666904016316" duration="2552000" />
+      <workItem from="1668450048188" duration="851000" />
+      <workItem from="1668464829308" duration="1325000" />
+      <workItem from="1671574928282" duration="5456000" />
+      <workItem from="1671750308689" duration="20360000" />
+      <workItem from="1672808583679" duration="479000" />
+    </task>
+    <task id="LOCAL-00001" summary="add a basic working about us page at /about">
+      <created>1666650496168</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1666650496168</updated>
+    </task>
+    <task id="LOCAL-00002" summary="get a super basic club specific page working">
+      <created>1666724412829</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1666724412829</updated>
+    </task>
+    <task id="LOCAL-00003" summary="link logo in navbar to /clubs">
+      <created>1666725987762</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1666725987762</updated>
+    </task>
+    <task id="LOCAL-00004" summary="render club descriptions as html (from db)">
+      <created>1666726085533</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1666726085533</updated>
+    </task>
+    <task id="LOCAL-00005" summary="rename join to interest, and rename some endpoints">
+      <created>1666759900514</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1666759900514</updated>
+    </task>
+    <task id="LOCAL-00006" summary="edit next.config.js">
+      <created>1666763845851</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1666763845851</updated>
+    </task>
+    <task id="LOCAL-00007" summary="update package.lock">
+      <created>1666764485989</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1666764485989</updated>
+    </task>
+    <task id="LOCAL-00008" summary="update readme">
+      <created>1666793852530</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1666793852530</updated>
+    </task>
+    <task id="LOCAL-00009" summary="add image to readme">
+      <created>1666794152198</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1666794152198</updated>
+    </task>
+    <task id="LOCAL-00010" summary="add dynamic categories">
+      <created>1666820304189</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1666820304189</updated>
+    </task>
+    <task id="LOCAL-00011" summary="rm cursor pointer">
+      <created>1666823986424</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1666823986424</updated>
+    </task>
+    <task id="LOCAL-00012" summary="link to TOS and Privacy policy">
+      <created>1666904764028</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1666904764028</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="add a basic working about us page at /about" />
+    <MESSAGE value="get a super basic club specific page working" />
+    <MESSAGE value="link logo in navbar to /clubs" />
+    <MESSAGE value="render club descriptions as html (from db)" />
+    <MESSAGE value="rename join to interest, and rename some endpoints" />
+    <MESSAGE value="edit next.config.js" />
+    <MESSAGE value="update package.lock" />
+    <MESSAGE value="update readme" />
+    <MESSAGE value="add image to readme" />
+    <MESSAGE value="add dynamic categories" />
+    <MESSAGE value="rm cursor pointer" />
+    <MESSAGE value="link to TOS and Privacy policy" />
+    <MESSAGE value="implement filtering of clubs" />
+    <MESSAGE value="fix bad merge" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix bad merge" />
+  </component>
+</project>
