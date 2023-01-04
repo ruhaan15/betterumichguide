@@ -8,6 +8,8 @@ export default function Home() {
     const [page, setPage] = useState(0);
     const [selectedFilters, setSelectedFilters] = useState([]);
 
+    const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
     const filters = ["Academic/Honor Societies", "Activism", "Business/Entrepreneurship", "Creative/Performing Arts",
                         "Cultural/Ethnic", "Department", "Environmental", "Gender/Sexuality", "Governance",
                         "Graduate/Professional", "Health & Wellness", "Media & Creative Writing", "Religious/Spiritual",
@@ -18,7 +20,7 @@ export default function Home() {
         console.log(search, selectedFilters)
         if (search !== "") {
             axios
-                .get("http://localhost:5000/api/v1/clubs/searchClubs", {
+                .get(`${API_URL}/api/v1/clubs/searchClubs`, {
                     params: {
                         query: search,
                         filters: selectedFilters
@@ -33,7 +35,7 @@ export default function Home() {
                 });
         } else {
             axios
-                .get("http://localhost:5000/api/v1/clubs/getAllClubs", {
+                .get(`${API_URL}/api/v1/clubs/getAllClubs`, {
                     params: {
                         page: page,
                         size: 10,
